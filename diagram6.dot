@@ -1,0 +1,9 @@
+digraph MitoHPC {
+    rankdir=LR;
+
+    FASTQ -> minimap2 [label="reads"];
+    Reference -> minimap2 [label="reference"];
+    minimap2 -> BAM [label="alignment"];
+    BAM -> VariantCalling [label="input"];
+    VariantCalling -> VCF [label="variants"];
+}

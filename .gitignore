@@ -1,0 +1,13 @@
+# Node dependencies
+node_modules/
+
+# Generated diagram files
+*.png
+*.svg
+
+# Temporary/output files
+diagram.txt
+
+# Python cache
+__pycache__/
+*.pyc

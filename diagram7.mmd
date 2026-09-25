@@ -1,0 +1,34 @@
+flowchart LR
+
+    subgraph INPUT["Input"]
+        direction TB
+        FASTQ[/"FASTQ reads"/]
+        REF[("Reference genome")]
+    end
+
+    subgraph ALIGN["Alignment"]
+        direction TB
+        AM["Alignment method<br>1:bwa mem<br>2:minimap2"]
+        BAM[/"BAM file"/]
+     end
+
+    subgraph VARIANT["Variant Detection"]
+        direction TB
+        CALL["Variant calling"]
+        FILTER["Filtering"]
+    end
+
+    subgraph OUTPUT["Output"]
+        direction TB
+        VCF[/VCF/]
+        REPORT[/Report/]
+    end
+
+    FASTQ --> AM
+    REF --> AM
+    AM --> BAM
+
+    BAM --> CALL
+    CALL --> FILTER
+    FILTER --> VCF
+    VCF --> REPORT
