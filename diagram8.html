@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<pre class="mermaid">
+flowchart LR
+    A["fa:fa-dna FASTQ"]
+    B["fa:fa-server Server"]
+    C["fa:fa-database Database"]
+
+    A --> B --> C
+</pre>
+
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs";
+
+  mermaid.initialize({
+    startOnLoad: true
+  });
+</script>
+
+</body>
+</html>

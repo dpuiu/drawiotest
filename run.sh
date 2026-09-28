@@ -11,6 +11,8 @@ pandoc DSAI_RSE_request.dpuiu.2026-09-24.html -o DSAI_RSE_request.dpuiu.2026-09-
 ## mermaid
 
 npm install -g @mermaid-js/mermaid-cli
+npx puppeteer browsers install chrome-headless-shell
+
 which mmdc
   /usr/bin/mmdc
 

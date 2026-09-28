@@ -1,0 +1,28 @@
+Alignment:Bwa, minimap2
+Fastq sample:illumina, onto, pacbio
+Refile : hg38, t2t
+
+Cn
+Sam filter
+Sam count
+
+ReAlignment:Bwa,
+Ref: Chrm, numt
+
+Filter mt inly
+
+Snv caller:mutect2, freebayes, varscan
+Homoplasmie
+Heteroplasmies
+
+Get consensus
+
+Haplogroup
+
+Haplickeck
+
+ReAlignment:Bwa,
+Ref: ChrmNew, numt
+
+Merge snvs
+Comoute stats, avg homopl, het per sample, check bias, batch effecrs

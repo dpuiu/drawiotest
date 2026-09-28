@@ -4,6 +4,7 @@ node_modules/
 # Generated diagram files
 *.png
 *.svg
+*.swp
 
 # Temporary/output files
 diagram.txt
