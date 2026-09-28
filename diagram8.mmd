@@ -1,0 +1,15 @@
+flowchart LR
+
+    subgraph INPUT["Input"]
+        direction TB
+        FASTQ[/"FASTQ reads"/]
+        REF[("Reference genome")]
+    end
+
+    subgraph ALIGN["Alignment"]
+        direction TB
+        AM["Alignment method<br>1:bwa mem<br>2:minimap2"]
+        BAM[/"BAM file"/]
+    end
+
+    INPUT --> ALIGN

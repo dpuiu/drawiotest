@@ -1,0 +1,16 @@
+flowchart LR
+    A[Alignment File]
+
+    A --> B[Count Reads]
+    B --> C[/Coverage,<br/>Copy Number/]
+    C --> O[(Output Files)]
+
+    A --> D[Grab Reads<br/>from chrM,<br/>NUMTs,<br/>unmapped]
+    D --> E[/Filtered<br/>BAM/]
+    E --> F[Identify<br/>Heteroplasmy<br/>and<br/>Homoplasmy]
+    F --> O
+
+    F --> G[/Sample<br/>chrM<br/>consensus/]
+    G --> H[Remap reads]
+    H --> I[Identify<br/>Heteroplasmy]
+    I --> O
