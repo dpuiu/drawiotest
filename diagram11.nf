@@ -264,14 +264,14 @@ process REALIGN_NUMTS {
     """
 }
 
-process SELECT_MT_READS {
+process COMPARE_SCORES {
     tag "$sample_id"
 
     input:
-    tuple val(sample_id), path(mito_score), path(numt_score), path(mito_sam)
+    tuple val(sample_id), path(mito_score), path(numt_score)
 
     output:
-    tuple val(sample_id), path("${sample_id}.sam")
+    tuple val(sample_id), path("${sample_id}.MT.ids")
 
     script:
     """
@@ -285,9 +285,24 @@ process SELECT_MT_READS {
         print join "\\t", @F;
         print "\\n";
     ' \
-    | intersectSam.pl \
+    > ${sample_id}.MT.ids
+    """
+}
+
+process SELECT_MT_READS {
+    tag "$sample_id"
+
+    input:
+    tuple val(sample_id), path(MT_ids), path(mito_sam)
+
+    output:
+    tuple val(sample_id), path("${sample_id}.sam")
+
+    script:
+    """
+    intersectSam.pl \
         ${mito_sam} \
-        - \
+        ${MT_ids} \
     > ${sample_id}.sam
     """
 }
