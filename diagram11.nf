@@ -12,7 +12,7 @@ workflow {
 //////////////////////////////
 // ALIGN READS
 
-process ALIGN_READS {
+process ALIGN_REFERENCE {
     tag "$sample_id"
 
     input:
@@ -185,7 +185,7 @@ process SUBSAMPLE_AND_TRIM {
     """
 }
 
-process REALIGN_CIRC_MT {
+process REALIGN_CIRCULARIZED_MT {
     tag "$sample_id"
 
     input:
@@ -570,7 +570,7 @@ process NORMALIZE_SNVS {
     """
 }
 
-process SELECT_DOMINANT_SNVS {
+process IDENTIFY_DOMINANT_SNVS {
     tag "$sample_id"
 
     input:
@@ -592,7 +592,7 @@ process SELECT_DOMINANT_SNVS {
     """
 }
 
-process FILTER_SNV {
+process STANDARDIZE_SNVS {
     tag "$sample_id"
 
     input:
